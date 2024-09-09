@@ -61,9 +61,9 @@ behaviors {
 // |      |  ~  |  €  |     |  "  |     |   |  [  |  (  |  )  |  ]  |  L3 |      |
 //                    |     |     | L0  |   | ALT | CTRL|  L4 |
                         bindings = <
-   &trans  &kp ESC   &kp AT       &kp HASH &kp DLLR &kp PRCNT    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp SEMI &kp RPAR &trans
-   &trans  &kp TAB   &kp KP_EQUAL &trans   &trans   &kp SQT      &kp BSLH  &kp LBRC  &kp RBRC        &kp PIPE &kp N0   &trans
-   &trans  &kp TILDE &kp POUND    &trans   &DQT     &trans       &kp LBKT  &kp LPAR  &kp RPAR        &kp RBKT &kp RBRC &trans
+   &trans  &kp ESC   &kp AT       &kp HASH &kp DLLR &kp PRCNT    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp SEMI &kp BSPC &trans
+   &trans  &kp TAB   &kp KP_EQUAL &trans   &trans   &kp SQT      &kp BSLH  &kp LBRC  &kp RBRC        &kp PIPE &kp RET  &trans
+   &trans  &kp TILDE &kp POUND    &trans   &DQT     &trans       &kp LBKT  &kp LPAR  &kp RPAR        &kp RBKT &trans   &trans
                     	          &trans   &trans   &tog 0       &kp LALT  &kp RCTL  &trans
                         >;
                 };
