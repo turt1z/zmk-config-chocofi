@@ -34,7 +34,7 @@
         vim_i: vim_i {
             compatible = "zmk,behavior-mod-morph";
             label = "VIM_I";
-            bindings = <&to 0>, <&vim_I>;
+            bindings = <&to 0>, <&vim_Ig>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -574,7 +574,7 @@
             bindings = <&kp LG(LEFT) &kp LS(ENTER) &kp LEFT>;
         };
 
-        vim_I: vim_I {
+        vim_Ig: vim_Ig {
             compatible = "zmk,behavior-macro";
             label = "VIM_Ig";
             #binding-cells = <0>;
