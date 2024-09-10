@@ -4,6 +4,9 @@ manifest:
       url-base: https://github.com/zmkfirmware
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    - name: zmk-led-indicators
+      url: https://github.com/urob/zmk-led-indicators.git
+      revision: main
   projects:
     - name: zmk
       remote: zmkfirmware
