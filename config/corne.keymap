@@ -35,6 +35,12 @@
             bindings = <&caps_word>;
             layers = <0>;
         };
+        combo_alt_f4 {
+            timeout-ms = <50>;
+            key-positions = <37 8>;
+            bindings = <&caps_word>;
+            layers = <1>;
+        };
     };
 };
 
@@ -48,6 +54,17 @@
             bindings
                 = <&macro_press   &kp LALT>
                 , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        alt_f4: alt_f4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp F4>
                 , <&macro_release &kp LALT>
                 ;
         };
@@ -86,7 +103,7 @@
                 // 1
                 lower_layer {
 // --------------------------------------------------------------------------------------------------------------------------------------------
-// |      |    PREV   |    NEXT   |    VOL-   |    VOL+   |    PP     |   |    PSCRN  |           |           |           |           |      |
+// |      |    PREV   |    NEXT   |    VOL-   |    VOL+   |    PP     |   |    PSCRN  |    AF4    |           |    PSCRN  |           |      |
 // |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |    RET    |   |    LFT    |    DWN    |     UP    |    RGT    |           |      |
 // |      |           |           |           |           |           |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
 //                                |    TAB    |    DEL    |    SPC    |   |           |           |           |
@@ -109,7 +126,7 @@
    &none   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT      &kp CARET     &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC  &none 
    &none   &kp TAB   &kp KP_EQUAL   &kp EXCL     &none      &kp SQT        &kp BSLH      &kp LBRC   &kp RBRC        &kp PIPE  &kp RET   &none 
    &none   &kp TILDE &euro          &kp QMARK    &none      &kp DQT        &kp LBKT      &kp LPAR   &kp RPAR        &kp RBKT  &to 3     &none 
-                    	            &kp LALT      &kp LCTL   &to 0          &mo 1         &kp RCTL   &none  
+                    	            &kp LALT     &kp LCTL   &to 0          &mo 1         &kp RCTL   &none  
                         >;
                 };
 
@@ -124,7 +141,7 @@
    &none   &kp ESC     &none     &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN     &kp KP_COMMA &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp BSPC       &none 
    &none   &kp TAB     &none     &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL     &kp KP_DOT   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp RET        &none 
    &none   &kp TILDE   &none     &none         &none        &none         &kp KP_N0    &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_NUMLOCK &none 
-                    	         &kp LALT       &kp LCTL     &to 0         &mo 1        &to 2       &none 
+                    	         &kp LALT      &kp LCTL     &to 0         &mo 1        &to 2       &none 
                         >;
                 };
 
