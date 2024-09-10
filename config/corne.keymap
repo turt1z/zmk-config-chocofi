@@ -46,11 +46,10 @@
      behaviors {
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;    // <---[[moderate duration]]
+            tapping-term-ms = <200>;
             quick-tap-ms = <0>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
     };
@@ -62,26 +61,26 @@
 // --------------------------------------------------------------------------------------------------------------------------------------------
 // |      |     Q     |     W     |     E     |     R     |     T     |   |     Y     |     U     |     I     |     O     |     P     |      |
 // |      |     A     |     S     |     D     |     F     |     G     |   |     H     |     J     |     K     |     L     |     ;     |      |
-// |      |     Z     |     X     |     C     |     V     |     B     |   |     N     |     M     |     ,     |     .     |     /     |      | // add _ ! - + to default layer
+// |      |     Z     |     X     |     C     |     V     |     B     |   |     N     |     M     |     ,     |     .     |     /     |      |
 //                                |    TAB    |    BSPC   |    SPC    |   |    RET    |  BRACKETS |    ESC    |
                         bindings = <
-   &none   &kp Q       &kp W        &kp E       &kp R         &kp T           &kp Y     &kp U         &kp I       &kp O        &kp P    &none 
-   &none   &kp A       &bhm LCTRL S &bhm LALT D &bhm LSHIFT F &kp G           &kp H     &bhm RSHIFT J &bhm LALT K &bhm RCTRL L &kp SEMI &none 
-   &none   &kp Z       &kp X        &kp C       &kp V         &kp B           &kp N     &kp M         &kp COMMA   &kp DOT      &kp FSLH &none 
-                                    &kp TAB     &kp BSPC      &lt 2 SPACE     &lt 1 RET &tog BRACKETS &kp ESC
+   &none   &kp Q       &kp W        &kp E       &kp R         &kp T        &kp Y     &kp U         &kp I              &kp O        &kp P          &none 
+   &none   &kp A       &bhm LCTRL S &bhm LALT D &bhm LSHIFT F &kp G        &kp H     &bhm RSHIFT J &bhm LALT K        &bhm RCTRL L &kp SEMI       &none 
+   &none   &kp Z       &kp X        &kp C       &kp V         &kp B        &kp N     &kp M         &mt COMMA KP_MINUS &mt DOT EXCL &mt FSLH UNDER &none 
+                                    &kp TAB     &kp BSPC      &lt 2 SPACE  &lt 1 RET &tog BRACKETS &kp ESC
                         >;
                 };
-                
+
                 // 1
                 lower_layer {
 // --------------------------------------------------------------------------------------------------------------------------------------------
-// |      |    PREV   |    NEXT   |    VOL-   |    VOL+   |     PP    |   |           |           |           |           |           |      |
-// |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |           |   |    LFT    |    DWN    |     UP    |    RGT    |           |      |
+// |      |    PREV   |    NEXT   |    VOL-   |    VOL+   |    PP     |   |           |           |           |           |           |      |
+// |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |    RET    |   |    LFT    |    DWN    |     UP    |    RGT    |           |      |
 // |      |           |           |           |           |           |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
 //                                |    TAB    |    DEL    |    SPC    |   |           |           |           |
                         bindings = <
-   &none  &kp C_PREV   &kp C_NEXT  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none      &none        &none       &none         &none    &none 
-   &none  &kp LGUI     &kp LCTL    &kp LALT     &kp LSHIFT   &none          &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT     &none    &none 
+   &none  &kp C_PREV   &kp C_NEXT  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &kp PSCRN  &none        &none       &none         &none    &none 
+   &none  &kp LGUI     &kp LCTL    &kp LALT     &kp LSHIFT   &kp RET        &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT     &none    &none 
    &none  &none        &none       &none        &none        &none          &kp HOME   &kp PG_DN    &kp PG_UP   &kp END       &none    &none 
                           	       &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
                         >;
@@ -91,14 +90,14 @@
                 raise_layer {
 // -------------------------------------------------------------------------------------------------------------------------------------------
 // |      |    ESC    |     @     |     #     |     $     |     %     |   |     ^     |     &     |     *     |     ;     |    BKSP   |      |
-// |      |    TAB    |     =     |           |           |     '     |   |     \     |     {     |     }     |     |     |    ENT    |      |
-// |      |     ~     |     €     |           |     "     |           |   |     [     |     (     |     )     |     ]     |    L5     |      |
+// |      |    TAB    |     =     |     !     |           |     '     |   |     \     |     {     |     }     |     |     |    ENT    |      |
+// |      |     ~     |     €     |     ?     |           |     "     |   |     [     |     (     |     )     |     ]     |    L3     |      |
 //                                |           |    CTRL   |    L0     |   |    ALT    |    CTRL   |     L3    |
                         bindings = <
-   &none   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT      &kp CARET   &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC   &none 
-   &none   &kp TAB   &kp KP_EQUAL   &none        &none      &kp SQT        &kp BSLH    &kp LBRC   &kp RBRC        &kp PIPE  &kp RET    &none 
-   &none   &kp TILDE &euro          &none        &kp DQT    &none          &kp LBKT    &kp LPAR   &kp RPAR        &kp RBKT  &to 0      &none 
-                    	            &none        &kp LCTL   &to 0          &kp LALT    &kp RCTL   &to 3  
+   &none   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT      &kp CARET     &kp AMPS   &kp KP_MULTIPLY &mt SEMI COLON &kp BSPC   &none 
+   &none   &kp TAB   &kp KP_EQUAL   &kp EXCL     &none      &kp SQT        &mt BSLH HOME &kp LBRC   &kp RBRC        &mt PIPE END   &kp RET    &none 
+   &none   &kp TILDE &euro          &kp QMARK    &none      &kp DQT        &kp LBKT      &kp LPAR   &kp RPAR        &kp RBKT       &to 3      &none 
+                    	            &none        &kp LCTL   &to 0          &kp LALT      &kp RCTL   &to 3  
                         >;
                 };
 
@@ -107,13 +106,13 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------
 // |      |    ESC    |           |     /     |     *     |           |   |     ,     |     7     |     8     |     9     |    BKSP   |      |
 // |      |    TAB    |           |     -     |     +     |     =     |   |     .     |     4     |     5     |     6     |    ENT    |      |
-// |      |    RST    |           |           |           |           |   |     0     |     1     |     2     |     3     |    L5     |      |
+// |      |    RST    |           |           |           |           |   |     0     |     1     |     2     |     3     |           |      |
 //                                |    FN     |    CTRL   |    L0     |   |    ALT    |     L2    |           |
                         bindings = <
-   &none   &kp ESC     &none     &kp KP_DIVIDE &kp KP_MULTIPLY &none   &kp KP_COMMA &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp BSPC    &none 
+   &none   &kp ESC     &none     &kp KP_DIVIDE &kp KP_MULTIPLY &none      &kp KP_COMMA &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp BSPC    &none 
    &none   &kp TAB     &none     &kp KP_MINUS  &kp KP_PLUS  &kp KP_EQUAL  &kp KP_DOT   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp RET     &none 
    &none   &kp TILDE   &none     &none         &none        &none         &kp KP_N0    &kp KP_N1   &kp KP_N2   &kp KP_N3   &none       &none 
-                    	          &mo FN       &kp LCTL     &to 0         &kp LALT     &to 2       &none 
+                    	         &mo FN        &kp LCTL     &to 0         &kp LALT     &to 2       &none 
                         >;
                 };
 
@@ -133,6 +132,3 @@
                 };
         };
 };
-
-
-// !, ?
