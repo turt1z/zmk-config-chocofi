@@ -34,7 +34,7 @@ behaviors {
 // |      |     Q     |     W     |     E     |     R     |    T      |   |     Y     |     U     |     I     |     O     |     P     |      |
 // |      |     A     |     S     |     D     |     F     |    G      |   |     H     |     J     |     K     |     L     |     ;     |      |
 // |      |     Z     |     X     |     C     |     V     |    B      |   |     N     |     M     |     ,     |     .     |     /     |      | // add _ ! - + to default layer
-//                                |    GUI    |    LWR    |   SPC     |   |    RET    |  BRACKETS |    ESC    |
+//                                |    TAB    |    BSPC   |   SPC     |   |    RET    |  BRACKETS |    ESC    |
                         bindings = <
    &trans  &kp Q       &kp W        &kp E       &kp R         &kp T           &kp Y     &kp U         &kp I       &kp O        &kp P    &trans
    &trans  &kp A       &bhm LCTRL S &bhm LALT D &bhm LSHIFT F &kp G           &kp H     &bhm RSHIFT J &bhm LALT K &bhm RCTRL L &kp SEMI &trans
@@ -47,13 +47,13 @@ behaviors {
 // --------------------------------------------------------------------------------------------------------------------------------------------
 // |      |           |           |           |           |           |   |           |           |           |           |           |      |
 // |      |    BT1    |    BT2    |    BT3    |    BT4    |    BT5    |   |    LFT    |    DWN    |     UP    |    RGT    |           |      |
-// |      |           |           |           |           |           |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
-//                                |    GUI    |    CTRL   |    SPC    |   |    ENT    |           |    ALT    |
+// |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |           |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
+//                                |    TAB    |    DEL    |    SPC    |   |    ENT    |           |    ALT    |
                         bindings = <
-   &trans &trans       &trans       &trans       &trans       &trans         &trans     &trans       &trans     &trans        &trans   &trans
-   &trans &kp C_PREV   &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &kp LEFT   &kp DOWN     &kp UP     &kp RIGHT     &trans   &trans
+   &trans &kp C_PREV   &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &trans     &trans       &trans     &trans        &trans   &trans
+   &trans &kp LGUI     &kp LCTL     &kp LALT     &kp LSHIFT   &trans         &kp LEFT   &kp DOWN     &kp UP     &kp RIGHT     &trans   &trans
    &trans &trans       &trans       &trans       &trans       &trans         &kp HOME   &kp PG_DN    &kp PG_UP  &kp END       &trans   &trans
-                          	    &kp LGUI     &kp LCTL     &kp SPACE      &kp RET    &trans       &kp RALT
+                          	    &kp TAB      &kp DEL      &kp SPACE      &kp RET    &trans       &kp RALT
                         >;
                 };
 
@@ -64,10 +64,10 @@ behaviors {
 // |      |     ~     |     €     |           |     "     |           |   |     [     |     (     |     )     |     ]     |     L3    |      |
 //                                |           |    CTRL   |    L0     |   |    ALT    |    CTRL   |     L4    |
                         bindings = <
-   &trans  &kp ESC     &kp AT       &kp HASH   &kp DLLR     &kp PRCNT      &kp CARET   &kp AMPS    &kp KP_MULTIPLY &kp SEMI  &kp BSPC  &trans
-   &trans  &kp TAB     &kp KP_EQUAL &trans     &trans       &kp SQT        &kp BSLH    &kp LBRC    &kp RBRC        &kp PIPE  &kp RET   &trans
-   &trans  &kp TILDE   &kp POUND    &trans     &kp DQT      &trans         &kp LBKT    &kp LPAR    &kp RPAR        &kp RBKT  &to 0     &trans
-                    	            &trans     &kp LCTL     &to 0          &kp LALT    &kp RCTL    &trans
+   &trans  &kp ESC   &kp AT             &kp HASH &kp DLLR   &kp PRCNT      &kp CARET   &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC   &trans
+   &trans  &kp TAB   &kp KP_EQUAL_AS400 &trans   &trans     &kp SQT        &kp BSLH    &kp LBRC   &kp RBRC        &kp PIPE  &kp RET    &trans
+   &trans  &kp TILDE &kp POUND          &trans   &kp DQT    &trans         &kp LBKT    &kp LPAR   &kp RPAR        &kp RBKT  &to 0      &trans
+                    	            &trans     &kp LCTL     &to 0          &kp LALT    &kp RCTL   &trans
                         >;
                 };
 
@@ -100,3 +100,6 @@ behaviors {
                 };
         };
 };
+
+
+// GUI on default layer (2 keys), ALT_GR/EUR, !, ?
