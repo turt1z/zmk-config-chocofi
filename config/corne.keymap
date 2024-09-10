@@ -25,8 +25,8 @@
         };
         combo_pscrn {
             timeout-ms = <50>;
-            key-positions = <7 11>;
-            bindings = <&kp LGUI>;
+            key-positions = <6 10>;
+            bindings = <&kp PSCRN>;
             layers = <0>;
         };
     };
@@ -44,6 +44,11 @@
                 , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
                 , <&macro_release &kp LALT>
                 ;
+        };
+        numpad_layer_activate: nln {
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            bindings = <&kp KP_NUMLOCK>, <&mo NUMBERS>;  // Toggle Num Lock and switch to NUMBERS layer
         };
     };
 };
@@ -85,7 +90,7 @@
 // |      |           |           |           |           |           |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
 //                                |    TAB    |    DEL    |    SPC    |   |           |           |           |
                         bindings = <
-   &none  &kp C_PREV   &kp C_NEXT  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none  &none        &none       &none         &none    &none 
+   &none  &kp C_PREV   &kp C_NEXT  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none      &none        &none       &none         &none    &none 
    &none  &kp LGUI     &kp LCTL    &kp LALT     &kp LSHIFT   &kp RET        &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT     &none    &none 
    &none  &none        &none       &none        &none        &none          &kp HOME   &kp PG_DN    &kp PG_UP   &kp END       &none    &none 
                           	       &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
@@ -98,12 +103,12 @@
 // |      |    ESC    |     @     |     #     |     $     |     %     |   |     ^     |     &     |     *     |     ;     |    BKSP   |      |
 // |      |    TAB    |     =     |     !     |           |     '     |   |     \     |     {     |     }     |     |     |    ENT    |      |
 // |      |     ~     |     €     |     ?     |           |     "     |   |     [     |     (     |     )     |     ]     |    L3     |      |
-//                                |           |    CTRL   |    L0     |   |    ALT    |    CTRL   |     L3    |
+//                                |           |    CTRL   |    L0     |   |    ALT    |    CTRL   |           |
                         bindings = <
    &none   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT      &kp CARET     &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC  &none 
    &none   &kp TAB   &kp KP_EQUAL   &kp EXCL     &none      &kp SQT        &kp BSLH      &kp LBRC   &kp RBRC        &kp PIPE  &kp RET   &none 
-   &none   &kp TILDE &euro          &kp QMARK    &none      &kp DQT        &kp LBKT      &kp LPAR   &kp RPAR        &kp RBKT  &to 3     &none 
-                    	            &none        &kp LCTL   &to 0          &kp LALT      &kp RCTL   &to 3  
+   &none   &kp TILDE &euro          &kp QMARK    &none      &kp DQT        &kp LBKT      &kp LPAR   &kp RPAR        &kp RBKT  &nln      &none 
+                    	            &none        &kp LCTL   &to 0          &kp LALT      &kp RCTL   &none  
                         >;
                 };
 
