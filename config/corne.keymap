@@ -53,7 +53,7 @@ behaviors {
    &trans &trans       &trans       &trans       &trans       &trans         &trans     &trans       &trans     &trans        &trans   &trans
    &trans &kp C_PREV   &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &kp LEFT   &kp DOWN     &kp UP     &kp RIGHT     &trans   &trans
    &trans &trans       &trans       &trans       &trans       &trans         &kp HOME   &kp PG_DN    &kp PG_UP  &kp END       &trans   &trans
-                          	    &kp LGUI     &LCTL        &kp SPACE      &kp RET    &trans       &kp RALT
+                          	    &kp LGUI     &kp LCTL     &kp SPACE      &kp RET    &trans       &kp RALT
                         >;
                 };
 
