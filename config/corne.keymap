@@ -45,7 +45,7 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-        numpad_layer_activate: nln {
+        nln: nln {
             compatible = "zmk,behavior-macro";
             tap-ms = <0>;
             bindings = <&kp KP_NUMLOCK>, <&mo NUMBERS>;  // Toggle Num Lock and switch to NUMBERS layer
