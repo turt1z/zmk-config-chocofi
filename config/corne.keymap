@@ -23,6 +23,12 @@
             bindings = <&kp LGUI>;
             layers = <0>;
         };
+        combo_pscrn {
+            timeout-ms = <50>;
+            key-positions = <7 11>;
+            bindings = <&kp LGUI>;
+            layers = <0>;
+        };
     };
 };
 
@@ -74,12 +80,12 @@
                 // 1
                 lower_layer {
 // --------------------------------------------------------------------------------------------------------------------------------------------
-// |      |    PREV   |    NEXT   |    VOL-   |    VOL+   |    PP     |   |           |           |           |           |           |      |
+// |      |    PREV   |    NEXT   |    VOL-   |    VOL+   |    PP     |   |    PSCRN  |           |           |           |           |      |
 // |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |    RET    |   |    LFT    |    DWN    |     UP    |    RGT    |           |      |
 // |      |           |           |           |           |           |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
 //                                |    TAB    |    DEL    |    SPC    |   |           |           |           |
                         bindings = <
-   &none  &kp C_PREV   &kp C_NEXT  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &kp PSCRN  &none        &none       &none         &none    &none 
+   &none  &kp C_PREV   &kp C_NEXT  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none  &none        &none       &none         &none    &none 
    &none  &kp LGUI     &kp LCTL    &kp LALT     &kp LSHIFT   &kp RET        &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT     &none    &none 
    &none  &none        &none       &none        &none        &none          &kp HOME   &kp PG_DN    &kp PG_UP   &kp END       &none    &none 
                           	       &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
