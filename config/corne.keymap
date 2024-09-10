@@ -15,6 +15,18 @@
 #define FN 4
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_gui {
+            timeout-ms = <50>;
+            key-positions = <39 40>;
+            bindings = <&kp LGUI>;
+            layers = <0>;
+        };
+    };
+};
+
+/ {
 behaviors {
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -36,24 +48,24 @@ behaviors {
 // |      |     Z     |     X     |     C     |     V     |    B      |   |     N     |     M     |     ,     |     .     |     /     |      | // add _ ! - + to default layer
 //                                |    TAB    |    BSPC   |   SPC     |   |    RET    |  BRACKETS |    ESC    |
                         bindings = <
-   &trans  &kp Q       &kp W        &kp E       &kp R         &kp T           &kp Y     &kp U         &kp I       &kp O        &kp P    &trans
-   &trans  &kp A       &bhm LCTRL S &bhm LALT D &bhm LSHIFT F &kp G           &kp H     &bhm RSHIFT J &bhm LALT K &bhm RCTRL L &kp SEMI &trans
-   &trans  &kp Z       &kp X        &kp C       &kp V         &kp B           &kp N     &kp M         &kp COMMA   &kp DOT      &kp FSLH &trans
+   &none   &kp Q       &kp W        &kp E       &kp R         &kp T           &kp Y     &kp U         &kp I       &kp O        &kp P    &none 
+   &none   &kp A       &bhm LCTRL S &bhm LALT D &bhm LSHIFT F &kp G           &kp H     &bhm RSHIFT J &bhm LALT K &bhm RCTRL L &kp SEMI &none 
+   &none   &kp Z       &kp X        &kp C       &kp V         &kp B           &kp N     &kp M         &kp COMMA   &kp DOT      &kp FSLH &none 
                                     &kp TAB     &kp BSPC      &lt 2 SPACE     &lt 1 RET &tog BRACKETS &kp ESC
                         >;
                 };
 
                 lower_layer {
 // --------------------------------------------------------------------------------------------------------------------------------------------
-// |      |           |           |           |           |           |   |           |           |           |           |           |      |
-// |      |    BT1    |    BT2    |    BT3    |    BT4    |    BT5    |   |    LFT    |    DWN    |     UP    |    RGT    |           |      |
-// |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |           |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
+// |      |    BT1    |    BT2    |    BT3    |    BT4    |    BT5    |   |           |           |           |           |           |      |
+// |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |           |   |    LFT    |    DWN    |     UP    |    RGT    |           |      |
+// |      |           |           |           |           |           |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
 //                                |    TAB    |    DEL    |    SPC    |   |    ENT    |           |    ALT    |
                         bindings = <
-   &trans &kp C_PREV   &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &trans     &trans       &trans     &trans        &trans   &trans
-   &trans &kp LGUI     &kp LCTL     &kp LALT     &kp LSHIFT   &trans         &kp LEFT   &kp DOWN     &kp UP     &kp RIGHT     &trans   &trans
-   &trans &trans       &trans       &trans       &trans       &trans         &kp HOME   &kp PG_DN    &kp PG_UP  &kp END       &trans   &trans
-                          	    &kp TAB      &kp DEL      &kp SPACE      &kp RET    &trans       &kp RALT
+   &none  &kp C_PREV   &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none      &none        &none      &none         &none    &none 
+   &none  &kp LGUI     &kp LCTL     &kp LALT     &kp LSHIFT   &none          &kp LEFT   &kp DOWN     &kp UP     &kp RIGHT     &none    &none 
+   &none  &none        &none        &none        &none        &none          &kp HOME   &kp PG_DN    &kp PG_UP  &kp END       &none    &none 
+                          	    &kp TAB      &kp DEL      &kp SPACE      &kp RET    &none        &kp RALT
                         >;
                 };
 
@@ -64,10 +76,10 @@ behaviors {
 // |      |     ~     |     €     |           |     "     |           |   |     [     |     (     |     )     |     ]     |     L3    |      |
 //                                |           |    CTRL   |    L0     |   |    ALT    |    CTRL   |     L4    |
                         bindings = <
-   &trans  &kp ESC   &kp AT             &kp HASH &kp DLLR   &kp PRCNT      &kp CARET   &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC   &trans
-   &trans  &kp TAB   &kp KP_EQUAL_AS400 &trans   &trans     &kp SQT        &kp BSLH    &kp LBRC   &kp RBRC        &kp PIPE  &kp RET    &trans
-   &trans  &kp TILDE &kp POUND          &trans   &kp DQT    &trans         &kp LBKT    &kp LPAR   &kp RPAR        &kp RBKT  &to 0      &trans
-                    	            &trans     &kp LCTL     &to 0          &kp LALT    &kp RCTL   &trans
+   &none   &kp ESC   &kp AT             &kp HASH &kp DLLR   &kp PRCNT      &kp CARET   &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC   &none 
+   &none   &kp TAB   &kp KP_EQUAL_AS400 &none    &none      &kp SQT        &kp BSLH    &kp LBRC   &kp RBRC        &kp PIPE  &kp RET    &none 
+   &none   &kp TILDE &kp POUND          &none    &kp DQT    &none          &kp LBKT    &kp LPAR   &kp RPAR        &kp RBKT  &to 0      &none 
+                    	            &none      &kp LCTL     &to 0          &kp LALT    &kp RCTL   &none 
                         >;
                 };
 
@@ -78,10 +90,10 @@ behaviors {
 // |      |    RST    |           |           |           |     /     |   |     0     |     1     |     2     |     3     |           |      |
 //                                |    FN     |     L0    |    CTRL   |   |    ALT    |     L2    |           |
                         bindings = <
-   &trans  &kp ESC     &trans       &trans      &trans     &kp KP_PLUS      &kp KP_MINUS &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp BSPC    &trans
-   &trans  &kp TAB     &trans       &trans      &trans     &kp KP_MULTIPLY  &kp KP_EQUAL &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp RET     &trans
-   &trans  &kp TILDE   &trans       &trans      &trans     &kp KP_DIVIDE    &kp KP_N0    &kp KP_N1  &kp KP_N2  &kp KP_N3   &trans      &trans
-                    	            &mo FN      &to 0      &kp LCTL         &kp LALT     &to 2     &trans
+   &none   &kp ESC     &none        &none       &none      &kp KP_PLUS      &kp KP_MINUS &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp BSPC    &none 
+   &none   &kp TAB     &none        &none       &none      &kp KP_MULTIPLY  &kp KP_EQUAL &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp RET     &none 
+   &none   &kp TILDE   &none        &none       &none      &kp KP_DIVIDE    &kp KP_N0    &kp KP_N1  &kp KP_N2  &kp KP_N3   &none       &none 
+                    	            &mo FN      &to 0      &kp LCTL         &kp LALT     &to 2     &none 
                         >;
                 };
 
@@ -92,10 +104,10 @@ behaviors {
 // |      |           |           |           |           |           |   |           |     F1    |     F2    |     F3    |           |      |
 //                                |           |           |           |   |           |           |           |
                         bindings = <
-   &trans  &kp ESC      &trans     &trans      &trans      &kp KP_PLUS      &trans     &kp F7       &kp F8     &kp F9      &trans      &trans
-   &trans  &kp TAB      &trans     &trans      &trans      &kp KP_MULTIPLY  &trans     &kp F4       &kp F5     &kp F6      &trans      &trans
-   &trans  &kp TILDE    &trans     &trans      &trans      &kp KP_DIVIDE    &trans     &kp F1       &kp F2     &kp F3      &trans      &trans
-                    	           &trans      &trans      &trans           &trans     &trans       &trans
+   &none   &kp ESC      &none      &none       &none       &kp KP_PLUS      &none      &kp F7       &kp F8     &kp F9      &none       &none 
+   &none   &kp TAB      &none      &none       &none       &kp KP_MULTIPLY  &none      &kp F4       &kp F5     &kp F6      &none       &none 
+   &none   &kp TILDE    &none      &none       &none       &kp KP_DIVIDE    &none      &kp F1       &kp F2     &kp F3      &none       &none 
+                    	           &none       &none       &none            &none      &none        &none 
                         >;
                 };
         };
