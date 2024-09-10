@@ -27,7 +27,7 @@
             timeout-ms = <50>;
             key-positions = <6 10>;
             bindings = <&kp PSCRN>;
-            layers = <0>;
+            layers = <1>;
         };
     };
 };
@@ -44,12 +44,6 @@
                 , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
                 , <&macro_release &kp LALT>
                 ;
-        };
-        nln: nln {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <0>;
-            bindings = <&cond NUM_LOCK_OFF &kp KP_NUMLOCK>, <&to 3>;  // Toggle Num Lock and switch to NUMBERS layer
         };
     };
 };
@@ -108,7 +102,7 @@
                         bindings = <
    &none   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT      &kp CARET     &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC  &none 
    &none   &kp TAB   &kp KP_EQUAL   &kp EXCL     &none      &kp SQT        &kp BSLH      &kp LBRC   &kp RBRC        &kp PIPE  &kp RET   &none 
-   &none   &kp TILDE &euro          &kp QMARK    &none      &kp DQT        &kp LBKT      &kp LPAR   &kp RPAR        &kp RBKT  &nln      &none 
+   &none   &kp TILDE &euro          &kp QMARK    &none      &kp DQT        &kp LBKT      &kp LPAR   &kp RPAR        &kp RBKT  &to 3     &none 
                     	            &none        &kp LCTL   &to 0          &kp LALT      &kp RCTL   &none  
                         >;
                 };
