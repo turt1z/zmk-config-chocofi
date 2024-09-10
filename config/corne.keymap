@@ -109,7 +109,7 @@
    &none   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT      &kp CARET     &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC  &none 
    &none   &kp TAB   &kp KP_EQUAL   &kp EXCL     &none      &kp SQT        &kp BSLH      &kp LBRC   &kp RBRC        &kp PIPE  &kp RET   &none 
    &none   &kp TILDE &euro          &kp QMARK    &none      &kp DQT        &kp LBKT      &kp LPAR   &kp RPAR        &kp RBKT  &to 3     &none 
-                    	            &kp ALT      &kp LCTL   &to 0          &mo 1         &kp RCTL   &none  
+                    	            &kp LALT      &kp LCTL   &to 0          &mo 1         &kp RCTL   &none  
                         >;
                 };
 
