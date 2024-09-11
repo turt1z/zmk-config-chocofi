@@ -57,6 +57,39 @@
                 , <&macro_release &kp LALT>
                 ;
         };
+        ä: ä {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N8>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        ö: ö {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N6>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        ü: ü {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N5 &kp KP_N2>
+                , <&macro_release &kp LALT>
+                ;
+        };
         alt_f4: alt_f4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -72,7 +105,10 @@
 };
 
 / {
-     behaviors {
+
+    // chosen { zmk,matrix_transform = &five_column_transform; };
+
+    behaviors {
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -133,14 +169,14 @@
                 // 3
                 number_layer {
 // -------------------------------------------------------------------------------------------------------------------------------------------
-// |      |    ESC    |           |     /     |     *     |     FN    |   |     ,     |     7     |     8     |     9     |    BKSP   |      |
-// |      |    TAB    |           |     -     |     +     |     =     |   |     .     |     4     |     5     |     6     |    ENT    |      |
-// |      |    RST    |           |           |           |     GUI   |   |     0     |     1     |     2     |     3     |           |      |
+// |      |    ESC    |     ä     |     /     |     *     |     FN    |   |     ,     |     7     |     8     |     9     |    BKSP   |      |
+// |      |    TAB    |     ö     |     -     |     +     |     =     |   |     .     |     4     |     5     |     6     |    ENT    |      |
+// |      |    RST    |     ü     |           |           |     GUI   |   |     0     |     1     |     2     |     3     |           |      |
 //                                |    ALT    |    CTRL   |     L0    |   |     L1    |     L2    |           |
                         bindings = <
-   &none   &kp ESC     &none     &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN       &kp COMMA    &kp N7      &kp N8     &kp N9      &kp BSPC    &none 
-   &none   &kp TAB     &none     &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL       &kp DOT      &kp N4      &kp N5     &kp N6      &kp RET     &none 
-   &none   &kp TILDE   &none     &none         &none        &kp LGUI        &kp N0       &kp N1      &kp N2     &kp N3      &none       &none 
+   &none   &kp ESC     &ä        &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN       &kp COMMA    &kp N7      &kp N8     &kp N9      &kp BSPC    &none 
+   &none   &kp TAB     &ö        &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL       &kp DOT      &kp N4      &kp N5     &kp N6      &kp RET     &none 
+   &none   &kp TILDE   &ü        &none         &none        &kp LGUI        &kp N0       &kp N1      &kp N2     &kp N3      &none       &none 
                     	         &kp LALT      &kp LCTL     &to 0           &mo 1        &to 2       &none 
                         >;
                 };
