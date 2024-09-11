@@ -138,10 +138,10 @@
 // |      |    RST    |           |           |           |     GUI   |   |     0     |     1     |     2     |     3     |           |      |
 //                                |    ALT    |    CTRL   |     L0    |   |     L1    |     L2    |           |
                         bindings = <
-   &none   &kp ESC     &none     &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN     &kp KP_COMMA   &kp N7      &kp N8     &kp N9      &kp BSPC    &none 
-   &none   &kp TAB     &none     &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL     &kp DOT        &kp N4      &kp N5     &kp N6      &kp RET     &none 
-   &none   &kp TILDE   &none     &none         &none        &kp LGUI      &kp N0         &kp N1      &kp N2     &kp N3      &kp NUMLOCK &none 
-                    	         &kp LALT      &kp LCTL     &to 0         &mo 1          &to 2       &none 
+   &none   &kp ESC     &none     &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN       &kp COMMA    &kp N7      &kp N8     &kp N9      &kp BSPC    &none 
+   &none   &kp TAB     &none     &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL       &kp DOT      &kp N4      &kp N5     &kp N6      &kp RET     &none 
+   &none   &kp TILDE   &none     &none         &none        &kp LGUI        &kp N0       &kp N1      &kp N2     &kp N3      &none       &none 
+                    	         &kp LALT      &kp LCTL     &to 0           &mo 1        &to 2       &none 
                         >;
                 };
 
