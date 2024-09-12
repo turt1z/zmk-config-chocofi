@@ -141,13 +141,13 @@
 // --------------------------------------------------------------------------------------------------------------------------------------------
 // |      |    PREV   |    NEXT   |    VOL-   |    VOL+   |    PP     |   |    PSCRN  |    AF4    |           |    PSCRN  |           |      |
 // |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |    RET    |   |    LFT    |    DWN    |     UP    |    RGT    |           |      |
-// |      |           |           |           |           |           |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
+// |      |    BT_C   |    BT_0   |   BT_01   |   BT_02   |           |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
 //                                |    TAB    |    DEL    |    SPC    |   |           |           |           |
                         bindings = <
-   &none  &kp C_PREV   &kp C_NEXT  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none      &none        &none       &none         &none    &none 
-   &none  &kp LGUI     &kp LCTL    &kp LALT     &kp LSHIFT   &kp RET        &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT     &none    &none 
-   &none  &none        &none       &none        &none        &none          &kp HOME   &kp PG_DN    &kp PG_UP   &kp END       &none    &none 
-                          	       &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
+   &none &kp C_PREV     &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none      &none        &none       &none         &none    &none 
+   &none &kp LGUI       &kp LCTL     &kp LALT     &kp LSHIFT   &kp RET        &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT     &none    &none 
+   &none &bt BT_CLR_ALL &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none          &kp HOME   &kp PG_DN    &kp PG_UP   &kp END       &none    &none 
+                          	         &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
                         >;
                 };
 
@@ -184,14 +184,14 @@
                 // 4
                 fn_layer {
 // -------------------------------------------------------------------------------------------------------------------------------------------
-// |      |           |           |           |           |           |   |           |     F7    |     F8    |     F9    |    F12    |      |
+// |      |  COLEMAK  |   QWERTY  |           |           |           |   |           |     F7    |     F8    |     F9    |    F12    |      |
 // |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |           |   |           |     F4    |     F5    |     F6    |    F11    |      |
 // |      |           |           |           |           |           |   |           |     F1    |     F2    |     F3    |    F10    |      |
 //                                |           |           |    L0     |   |           |           |           |
                         bindings = <
-   &none   &kp ESC      &none      &none       &none       &none            &none      &kp F7       &kp F8     &kp F9      &kp F12      &none 
+   &none   &to 5        &to 0      &none       &none       &none            &none      &kp F7       &kp F8     &kp F9      &kp F12      &none 
    &none   &kp LGUI     &kp LCTL   &kp LALT    &kp LSHIFT  &none            &none      &kp F4       &kp F5     &kp F6      &kp F11      &none 
-   &none   &kp TILDE    &none      &none       &none       &none            &none      &kp F1       &kp F2     &kp F3      &kp F10      &none 
+   &none   &none        &none      &none       &none       &none            &none      &kp F1       &kp F2     &kp F3      &kp F10      &none 
                     	           &none       &none       &to 0            &none      &none        &none 
                         >;
                 };
