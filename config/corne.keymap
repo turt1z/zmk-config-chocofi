@@ -176,12 +176,12 @@
 // |      |    ESC    |     ä     |     /     |     *     |     FN    |   |     ,     |     7     |     8     |     9     |    BKSP   |      |
 // |      |    TAB    |     ö     |     -     |     +     |     =     |   |     .     |     4     |     5     |     6     |    ENT    |      |
 // |      |    RST    |     ü     |           |           |     GUI   |   |     0     |     1     |     2     |     3     |           |      |
-//                                |    ALT    |    CTRL   |     L0    |   |     L1    |     L2    |           |
+//                                |    ALT    |    CTRL   |     L0    |   |     L1    |     L2    |   SHIFT   |
                         bindings = <
    &none   &kp ESC     &ae       &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN       &kp COMMA    &kp N7      &kp N8     &kp N9      &kp BSPC    &none 
    &none   &kp TAB     &oe       &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL       &kp DOT      &kp N4      &kp N5     &kp N6      &kp RET     &none 
    &none   &kp TILDE   &ue       &none         &none        &kp LGUI        &kp N0       &kp N1      &kp N2     &kp N3      &none       &none 
-                    	         &kp LALT      &kp LCTL     &to 0           &mo 1        &to 2       &none 
+                    	         &kp LALT      &kp LCTL     &to 0           &mo 1        &to 2       &kp LSHIFT 
                         >;
                 };
 
