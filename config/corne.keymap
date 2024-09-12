@@ -106,8 +106,6 @@
 
 / {
 
-    chosen { zmk,matrix_transform = &five_column_transform; };
-
     behaviors {
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
