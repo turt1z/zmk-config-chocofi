@@ -112,6 +112,8 @@
 
 / {
 
+    chosen { zmk,physical-layout = &foostan_corne_5col_layout;}
+
     behaviors {
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -128,75 +130,75 @@
                 // 0
                 colemak_layer {
 // --------------------------------------------------------------------------------------------------------------------------------------------
-// |      |     Q     |     W     |     F     |     P     |     B     |   |     J     |     L     |     U     |     Y     |     ;     |      |
-// |      |     A     |     R     |     S     |     T     |     G     |   |     M     |     N     |     E     |     I     |     O     |      |
-// |      |     X     |     C     |     D     |     V     |     Z     |   |     K     |     H     |     ,     |     .     |     /     |      |
-//                                |    TAB    |    BSPC   |    SPC    |   |    RET    |  BRACKETS |    ESC    |
-                        bindings = <
-   &none   &kp Q       &kp W        &kp F       &kp P         &kp B        &kp J     &kp L         &kp U              &kp Y           &kp SEMI       &none 
-   &none   &kp A       &bhm LCTRL R &bhm LALT S &bhm LSHIFT T &kp G        &kp M     &bhm RSHIFT N &bhm LALT E        &bhm RCTRL I    &kp O          &none 
-   &none   &kp X       &kp C        &kp D       &kp V         &kp Z        &kp K     &kp H         &mt KP_MINUS COMMA &mt KP_PLUS DOT &mt UNDER FSLH &none 
-                                    &lt 3 TAB   &kp BSPC      &lt 2 SPACE  &lt 1 RET &tog BRACKETS &kp ESC
+// |     Q     |     W     |     F     |     P     |     B     |   |     J     |     L     |     U     |     Y     |     ;     |
+// |     A     |     R     |     S     |     T     |     G     |   |     M     |     N     |     E     |     I     |     O     |
+// |     X     |     C     |     D     |     V     |     Z     |   |     K     |     H     |     ,     |     .     |     /     |
+//                         |    TAB    |    BSPC   |    SPC    |   |    RET    |  BRACKETS |    ESC    |
+                 bindings = <
+    &kp Q       &kp W        &kp F       &kp P         &kp B        &kp J     &kp L         &kp U              &kp Y           &kp SEMI      
+    &kp A       &bhm LCTRL R &bhm LALT S &bhm LSHIFT T &kp G        &kp M     &bhm RSHIFT N &bhm LALT E        &bhm RCTRL I    &kp O         
+    &kp X       &kp C        &kp D       &kp V         &kp Z        &kp K     &kp H         &mt KP_MINUS COMMA &mt KP_PLUS DOT &mt UNDER FSLH
+                             &lt 3 TAB   &kp BSPC      &lt 2 SPACE  &lt 1 RET &tog BRACKETS &kp ESC
                         >;
                 };
 
                 // 1
                 lower_layer {
 // --------------------------------------------------------------------------------------------------------------------------------------------
-// |      |    PREV   |    NEXT   |    VOL-   |    VOL+   |    PP     |   |    PSCRN  |    AF4    |           |    PSCRN  |           |      |
-// |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |    RET    |   |    LFT    |    DWN    |     UP    |    RGT    |           |      |
-// |      |           |    BT_0   |   BT_01   |   BT_02   |    BT_C   |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
-//                                |    TAB    |    DEL    |    SPC    |   |           |           |           |
-                        bindings = <
-   &none &kp C_PREV     &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none      &none        &none       &none         &none    &none 
-   &none &kp LGUI       &kp LCTL     &kp LALT     &kp LSHIFT   &kp RET        &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT     &none    &none 
-   &none &none          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR     &kp HOME   &kp PG_DN    &kp PG_UP   &kp END       &none    &none 
-                          	         &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
+// |    PREV   |    NEXT   |    VOL-   |    VOL+   |    PP     |   |    PSCRN  |    AF4    |           |    PSCRN  |           |
+// |    GUI    |    CTRL   |    ALT    |   SHIFT   |    RET    |   |    LFT    |    DWN    |     UP    |    RGT    |           |
+// |           |    BT_0   |   BT_01   |   BT_02   |    BT_C   |   |    HOME   |    PDN    |    PUP    |    END    |           |
+//                         |    TAB    |    DEL    |    SPC    |   |           |           |           |
+                 bindings = <
+    &kp C_PREV     &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none      &none        &none       &none         &none
+    &kp LGUI       &kp LCTL     &kp LALT     &kp LSHIFT   &kp RET        &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT     &none
+    &none          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR     &kp HOME   &kp PG_DN    &kp PG_UP   &kp END       &none
+                                &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
                         >;
                 };
 
                 // 2
                 raise_layer {
 // -------------------------------------------------------------------------------------------------------------------------------------------
-// |      |    ESC    |     @     |     #     |     $     |     %     |   |     ^     |     &     |     *     |     ;     |    BKSP   |      |
-// |      |    TAB    |     =     |     !     |           |     '     |   |     \     |     {     |     }     |     |     |    ENT    |      |
-// |      |     ~     |     €     |     ?     |           |     "     |   |     [     |     (     |     )     |     ]     |    L3     |      |
-//                                |    ALT    |    CTRL   |    L0     |   |     L1    |    CTRL   |           |
-                        bindings = <
-   &none   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT      &kp CARET     &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC  &none 
-   &none   &kp TAB   &kp KP_EQUAL   &kp EXCL     &none      &kp SQT        &kp BSLH      &kp LBRC   &kp RBRC        &kp PIPE  &kp RET   &none 
-   &none   &kp TILDE &euro          &kp QMARK    &none      &kp DQT        &kp LBKT      &kp LPAR   &kp RPAR        &kp RBKT  &to 3     &none 
-                    	            &kp LALT     &kp LCTL   &to 0          &mo 1         &kp RCTL   &none  
+// |    ESC    |     @     |     #     |     $     |     %     |   |     ^     |     &     |     *     |     ;     |    BKSP   |
+// |    TAB    |     =     |     !     |           |     '     |   |     \     |     {     |     }     |     |     |    ENT    |
+// |     ~     |     €     |     ?     |           |     "     |   |     [     |     (     |     )     |     ]     |    L3     |
+//                         |    ALT    |    CTRL   |    L0     |   |     L1    |    CTRL   |           |
+                 bindings = <
+    &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT      &kp CARET     &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC 
+    &kp TAB   &kp KP_EQUAL   &kp EXCL     &none      &kp SQT        &kp BSLH      &kp LBRC   &kp RBRC        &kp PIPE  &kp RET  
+    &kp TILDE &euro          &kp QMARK    &none      &kp DQT        &kp LBKT      &kp LPAR   &kp RPAR        &kp RBKT  &to 3    
+             	             &kp LALT     &kp LCTL   &to 0          &mo 1         &kp RCTL   &none  
                         >;
                 };
 
                 // 3
                 number_layer {
 // -------------------------------------------------------------------------------------------------------------------------------------------
-// |      |    ESC    |     ä     |     /     |     *     |     FN    |   |     ,     |     7     |     8     |     9     |    BKSP   |      |
-// |      |    TAB    |     ö     |     -     |     +     |     =     |   |     .     |     4     |     5     |     6     |    ENT    |      |
-// |      |    RST    |     ü     |           |           |     GUI   |   |     0     |     1     |     2     |     3     |           |      |
-//                                |    ALT    |    CTRL   |     L0    |   |     L1    |     L2    |   SHIFT   |
-                        bindings = <
-   &none   &kp ESC     &ae       &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN       &kp COMMA    &kp N7      &kp N8     &kp N9      &kp BSPC    &none 
-   &none   &kp TAB     &oe       &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL       &kp DOT      &kp N4      &kp N5     &kp N6      &kp RET     &none 
-   &none   &kp TILDE   &ue       &none         &none        &kp LGUI        &kp N0       &kp N1      &kp N2     &kp N3      &none       &none 
-                    	         &kp LALT      &kp LCTL     &to 0           &mo 1        &to 2       &kp LSHIFT 
+// |    ESC    |     ä     |     /     |     *     |     FN    |   |     ,     |     7     |     8     |     9     |    BKSP   |
+// |    TAB    |     ö     |     -     |     +     |     =     |   |     .     |     4     |     5     |     6     |    ENT    |
+// |    RST    |     ü     |           |           |     GUI   |   |     0     |     1     |     2     |     3     |           |
+//                         |    ALT    |    CTRL   |     L0    |   |     L1    |     L2    |   SHIFT   |
+                 bindings = <
+    &kp ESC     &ae       &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN       &kp COMMA    &kp N7      &kp N8     &kp N9      &kp BSPC   
+    &kp TAB     &oe       &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL       &kp DOT      &kp N4      &kp N5     &kp N6      &kp RET    
+    &kp TILDE   &ue       &none         &none        &kp LGUI        &kp N0       &kp N1      &kp N2     &kp N3      &none      
+                    	  &kp LALT      &kp LCTL     &to 0           &mo 1        &to 2       &kp LSHIFT 
                         >;
                 };
 
                 // 4
                 fn_layer {
 // -------------------------------------------------------------------------------------------------------------------------------------------
-// |      |  COLEMAK  |   QWERTY  |           |           |           |   |           |     F7    |     F8    |     F9    |    F12    |      |
-// |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |           |   |           |     F4    |     F5    |     F6    |    F11    |      |
-// |      |           |           |           |           |           |   |           |     F1    |     F2    |     F3    |    F10    |      |
-//                                |           |           |    L0     |   |           |           |           |
-                        bindings = <
-   &none   &to 5        &to 0      &none       &none       &none            &none      &kp F7       &kp F8     &kp F9      &kp F12      &none 
-   &none   &kp LGUI     &kp LCTL   &kp LALT    &kp LSHIFT  &none            &none      &kp F4       &kp F5     &kp F6      &kp F11      &none 
-   &none   &none        &none      &none       &none       &none            &none      &kp F1       &kp F2     &kp F3      &kp F10      &none 
-                    	           &none       &none       &to 0            &none      &none        &none 
+// |  COLEMAK  |   QWERTY  |           |           |           |   |           |     F7    |     F8    |     F9    |    F12    |
+// |    GUI    |    CTRL   |    ALT    |   SHIFT   |           |   |           |     F4    |     F5    |     F6    |    F11    |
+// |           |           |           |           |           |   |           |     F1    |     F2    |     F3    |    F10    |
+//                         |           |           |    L0     |   |           |           |           |
+                 bindings = <
+    &to 5        &to 0      &none       &none       &none            &none      &kp F7       &kp F8     &kp F9      &kp F12     
+    &kp LGUI     &kp LCTL   &kp LALT    &kp LSHIFT  &none            &none      &kp F4       &kp F5     &kp F6      &kp F11     
+    &none        &none      &none       &none       &none            &none      &kp F1       &kp F2     &kp F3      &kp F10     
+             	           &none       &none       &to 0            &none      &none        &none 
                         >;
                 };
         };
