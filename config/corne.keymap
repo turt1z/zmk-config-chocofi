@@ -41,6 +41,12 @@
             bindings = <&alt_f4>;
             layers = <1>;
         };
+        combo_BT_CLR_ALL {
+            timeout-ms = <50>;
+            key-positions = <25 9>;
+            bindings = <&bt BT_CLR_ALL>;
+            layers = <1>;
+        };
     };
 };
 
@@ -139,12 +145,12 @@
 // --------------------------------------------------------------------------------------------------------------------------------------------
 // |      |    PREV   |    NEXT   |    VOL-   |    VOL+   |    PP     |   |    PSCRN  |    AF4    |           |    PSCRN  |           |      |
 // |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |    RET    |   |    LFT    |    DWN    |     UP    |    RGT    |           |      |
-// |      |    BT_C   |    BT_0   |   BT_01   |   BT_02   |           |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
+// |      |           |    BT_0   |   BT_01   |   BT_02   |    BT_C   |   |    HOME   |    PDN    |    PUP    |    END    |           |      |
 //                                |    TAB    |    DEL    |    SPC    |   |           |           |           |
                         bindings = <
    &none &kp C_PREV     &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none      &none        &none       &none         &none    &none 
    &none &kp LGUI       &kp LCTL     &kp LALT     &kp LSHIFT   &kp RET        &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT     &none    &none 
-   &none &bt BT_CLR_ALL &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none          &kp HOME   &kp PG_DN    &kp PG_UP   &kp END       &none    &none 
+   &none &none          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR     &kp HOME   &kp PG_DN    &kp PG_UP   &kp END       &none    &none 
                           	         &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
                         >;
                 };
