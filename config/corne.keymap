@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include "keys/36.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -127,7 +128,7 @@
             bindings = <&kp>, <&kp>;
         };
     };
-    
+
     keymap {
                 compatible = "zmk,keymap";
 
