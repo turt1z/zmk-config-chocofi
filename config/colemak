@@ -12,3 +12,17 @@
 //                                     &lt 3 TAB   &kp BSPC      &lt 2 SPACE  &lt 1 RET &tog BRACKETS &kp ESC
 //                         >;
 //                 };
+
+default_layer {
+// --------------------------------------------------------------------------------------------------------------------------------------------
+// |      |     Q     |     W     |     E     |     R     |     T     |   |     Y     |     U     |     I     |     O     |     P     |      |
+// |      |     A     |     S     |     D     |     F     |     G     |   |     H     |     J     |     K     |     L     |     ;     |      |
+// |      |     Z     |     X     |     C     |     V     |     B     |   |     N     |     M     |     ,     |     .     |     /     |      |
+//                                |    TAB    |    BSPC   |    SPC    |   |    RET    |  BRACKETS |    ESC    |
+                        bindings = <
+   &none   &kp Q       &kp W        &kp E       &kp R         &kp T        &kp Y     &kp U         &kp I              &kp O           &kp P          &none 
+   &none   &kp A       &bhm LCTRL S &bhm LALT D &bhm LSHIFT F &kp G        &kp H     &bhm RSHIFT J &bhm LALT K        &bhm RCTRL L    &kp SEMI       &none 
+   &none   &kp Z       &kp X        &kp C       &kp V         &kp B        &kp N     &kp M         &mt KP_MINUS COMMA &mt KP_PLUS DOT &mt UNDER FSLH &none 
+                                    &lt 3 TAB   &kp BSPC      &lt 2 SPACE  &lt 1 RET &tog BRACKETS &kp ESC
+                        >;
+                };
