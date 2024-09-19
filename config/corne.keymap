@@ -150,10 +150,10 @@
 // ╰──────────────────────────────╮    ALT    |    CTRL   |    L0     |     L4    |    CTRL   |           ╭──────────────────────────────╯
 //                                ╰───────────────────────────────────┴───────────────────────────────────╯
                         bindings = <
-   &none   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT      &kp CARET     &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC  &none 
-   &none   &kp TAB   &kp KP_EQUAL   &kp EXCL     &kp DQT    &none          &kp BSLH      &kp LPAR   &kp RPAR        &kp PIPE  &kp RET   &none 
-   &none   &kp TILDE &euro          &kp QMARK    &kp SQT    &none          &kp LBKT      &kp LBRC   &kp RBRC        &kp RBKT  &to 2     &none 
-                    	            &kp LALT     &kp LCTL   &to 0          &mo 4         &kp RCTL   &none  
+   &none   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT      &kp CARET     &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC    &none 
+   &none   &kp TAB   &kp KP_EQUAL   &kp EXCL     &kp DQT    &none          &kp BSLH      &kp LPAR   &kp RPAR        &kp PIPE  &kp RET     &none 
+   &none   &kp TILDE &euro          &kp QMARK    &kp SQT    &none          &kp LBKT      &kp LBRC   &kp RBRC        &kp RBKT  &to NUMBERS &none 
+                    	            &kp LALT     &kp LCTL   &to DEFAULT    &lt 4 SPACE   &kp RCTL   &none  
                         >;
                 };
 
@@ -166,10 +166,10 @@
 // ╰──────────────────────────────╮    ALT    |    CTRL   |     L0    |     L4    |     L1    |   SHIFT   ╭──────────────────────────────╯
 //                                ╰───────────────────────────────────┴───────────────────────────────────╯
                         bindings = <
-   &none   &kp ESC     &ae       &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN       &kp COMMA    &kp N7      &kp N8     &kp N9      &kp BSPC    &none 
-   &none   &kp TAB     &oe       &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL       &kp DOT      &kp N4      &kp N5     &kp N6      &kp RET     &none 
-   &none   &kp TILDE   &ue       &none         &none        &none           &kp N0       &kp N1      &kp N2     &kp N3      &kp LGUI    &none 
-                    	         &kp LALT      &kp LCTL     &to 0           &mo 4        &to 1       &kp LSHIFT 
+   &none   &kp ESC     &ae       &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN       &kp COMMA    &kp N7       &kp N8     &kp N9      &kp BSPC    &none 
+   &none   &kp TAB     &oe       &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL       &kp DOT      &kp N4       &kp N5     &kp N6      &kp RET     &none 
+   &none   &kp TILDE   &ue       &none         &none        &none           &kp N0       &kp N1       &kp N2     &kp N3      &kp LGUI    &none 
+                    	         &kp LALT      &kp LCTL     &to DEFAULT     &lt 4 SPACE  &to BRACKETS &kp LSHIFT 
                         >;
                 };
 
@@ -179,7 +179,7 @@
 // |      |  COLEMAK  |   QWERTY  |           |           |             |             |     F7    |     F8    |     F9    |    F12    |      |
 // |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |             |             |     F4    |     F5    |     F6    |    F11    |      |
 // |      |           |           |           |           |             |             |     F1    |     F2    |     F3    |    F10    |      |
-// ╰──────────────────────────────╮           |           |    L0       |             |           |           ╭──────────────────────────────╯
+// ╰──────────────────────────────╮           |           |     L0      |             |           |           ╭──────────────────────────────╯
 //                                ╰─────────────────────────────────────┴─────────────────────────────────────╯
                         bindings = <
    &none   &none        &none      &none       &none       &none            &none      &kp F7       &kp F8     &kp F9      &kp F12      &none 
