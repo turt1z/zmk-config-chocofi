@@ -9,10 +9,10 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define MOVEMENT 1
-#define BRACKETS 2
-#define NUMBERS 3
-#define FN 4
+#define BRACKETS 1
+#define NUMBERS 2
+#define FN 3
+#define MOVEMENT 4
 
 / {
     combos {
@@ -27,7 +27,7 @@
             timeout-ms = <50>;
             key-positions = <6 10>;
             bindings = <&kp PSCRN>;
-            layers = <1>;
+            layers = <4>;
         };
         combo_capsword {
             timeout-ms = <50>;
@@ -39,13 +39,13 @@
             timeout-ms = <50>;
             key-positions = <38 8>;
             bindings = <&alt_f4>;
-            layers = <1>;
+            layers = <4>;
         };
         combo_BT_CLR_ALL {
             timeout-ms = <50>;
             key-positions = <25 9>;
             bindings = <&bt BT_CLR_ALL>;
-            layers = <1>;
+            layers = <4>;
         };
     };
 };
@@ -137,59 +137,43 @@
    &none   &kp Q       &kp W        &kp F       &kp P         &kp B        &kp J     &kp L         &kp U              &kp Y           &kp SEMI       &none 
    &none   &kp A       &bhm LCTRL R &bhm LALT S &bhm LSHIFT T &kp G        &kp M     &bhm RSHIFT N &bhm LALT E        &bhm RCTRL I    &kp O          &none 
    &none   &kp X       &kp C        &kp D       &kp V         &kp Z        &kp K     &kp H         &mt KP_MINUS COMMA &mt KP_PLUS DOT &mt UNDER FSLH &none 
-                                    &lt 3 TAB   &kp BSPC      &lt 2 SPACE  &lt 1 RET &to BRACKETS  &kp ESC
+                                    &lt 2 TAB   &kp BSPC      &lt 1 SPACE  &lt 4 RET &to BRACKETS  &kp ESC
                         >;
                 };
 
                 // 1
-                movement_layer {
-// ╭──────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────╮
-// |      |    PREV   |    NEXT   |    VOL-   |    VOL+   |    PP     |    PSCRN  |           |    AF4    |           |   PSCRN   |      |
-// |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |           |    LFT    |    DWN    |    UP     |    RGT    |    RET    |      |
-// |      |           |    BT_0   |   BT_01   |   BT_02   |    BT_C   |    HOME   |    PDN    |    PUP    |    END    |           |      |
-// ╰──────────────────────────────╮    TAB    |    DEL    |    SPC    |           |           |           ╭──────────────────────────────╯
-//                                ╰───────────────────────────────────┴───────────────────────────────────╯
-                        bindings = <
-   &none &kp C_PREV     &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none      &none        &none       &none         &none    &none 
-   &none &kp LGUI       &kp LCTL     &kp LALT     &kp LSHIFT   &none          &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT     &kp RET  &none 
-   &none &none          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR     &kp HOME   &kp PG_DN    &kp PG_UP   &kp END       &none    &none 
-                          	         &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
-                        >;
-                };
-
-                // 2
                 bracket_layer {
 // ╭──────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────╮
 // |      |    ESC    |     @     |     #     |     $     |     %     |     ^     |     &     |     *     |     ;     |    BKSP   |      |
 // |      |    TAB    |     =     |     !     |     "     |           |     \     |     (     |     )     |     |     |    RET    |      |
-// |      |     ~     |     €     |     ?     |     '     |           |     [     |     {     |     }     |     ]     |    L3     |      |
-// ╰──────────────────────────────╮    ALT    |    CTRL   |    L0     |     L1    |    CTRL   |           ╭──────────────────────────────╯
+// |      |     ~     |     €     |     ?     |     '     |           |     [     |     {     |     }     |     ]     |    L2     |      |
+// ╰──────────────────────────────╮    ALT    |    CTRL   |    L0     |     L4    |    CTRL   |           ╭──────────────────────────────╯
 //                                ╰───────────────────────────────────┴───────────────────────────────────╯
                         bindings = <
    &none   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT      &kp CARET     &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC  &none 
    &none   &kp TAB   &kp KP_EQUAL   &kp EXCL     &kp DQT    &none          &kp BSLH      &kp LPAR   &kp RPAR        &kp PIPE  &kp RET   &none 
-   &none   &kp TILDE &euro          &kp QMARK    &kp SQT    &none          &kp LBKT      &kp LBRC   &kp RBRC        &kp RBKT  &to 3     &none 
-                    	            &kp LALT     &kp LCTL   &to 0          &mo 1         &kp RCTL   &none  
+   &none   &kp TILDE &euro          &kp QMARK    &kp SQT    &none          &kp LBKT      &kp LBRC   &kp RBRC        &kp RBKT  &to 2     &none 
+                    	            &kp LALT     &kp LCTL   &to 0          &mo 4         &kp RCTL   &none  
                         >;
                 };
 
-                // 3
+                // 2
                 number_layer {
 // ╭──────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────╮
 // |      |    ESC    |     ä     |     /     |     *     |     FN    |     ,     |     7     |     8     |     9     |    BKSP   |      |
 // |      |    TAB    |     ö     |     -     |     +     |     =     |     .     |     4     |     5     |     6     |    ENT    |      |
 // |      |    RST    |     ü     |           |           |           |     0     |     1     |     2     |     3     |    GUI    |      |
-// ╰──────────────────────────────╮    ALT    |    CTRL   |     L0    |     L1    |     L2    |   SHIFT   ╭──────────────────────────────╯
+// ╰──────────────────────────────╮    ALT    |    CTRL   |     L0    |     L4    |     L1    |   SHIFT   ╭──────────────────────────────╯
 //                                ╰───────────────────────────────────┴───────────────────────────────────╯
                         bindings = <
    &none   &kp ESC     &ae       &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN       &kp COMMA    &kp N7      &kp N8     &kp N9      &kp BSPC    &none 
    &none   &kp TAB     &oe       &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL       &kp DOT      &kp N4      &kp N5     &kp N6      &kp RET     &none 
    &none   &kp TILDE   &ue       &none         &none        &none           &kp N0       &kp N1      &kp N2     &kp N3      &kp LGUI    &none 
-                    	         &kp LALT      &kp LCTL     &to 0           &mo 1        &to 2       &kp LSHIFT 
+                    	         &kp LALT      &kp LCTL     &to 0           &mo 4        &to 1       &kp LSHIFT 
                         >;
                 };
 
-                // 4
+                // 3
                 fn_layer {
 // ╭────────────────────────────────────────────────────────────────────┬────────────────────────────────────────────────────────────────────╮
 // |      |  COLEMAK  |   QWERTY  |           |           |             |             |     F7    |     F8    |     F9    |    F12    |      |
@@ -202,6 +186,22 @@
    &none   &kp LGUI     &kp LCTL   &kp LALT    &kp LSHIFT  &none            &none      &kp F4       &kp F5     &kp F6      &kp F11      &none 
    &none   &none        &none      &none       &none       &none            &none      &kp F1       &kp F2     &kp F3      &kp F10      &none 
                     	           &none       &none       &to 0            &none      &none        &none 
+                        >;
+                };
+
+                // 4
+                movement_layer {
+// ╭──────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────╮
+// |      |    PREV   |    NEXT   |    VOL-   |    VOL+   |    PP     |    PSCRN  |           |    AF4    |           |   PSCRN   |      |
+// |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |    BSPC   |    LFT    |    DWN    |    UP     |    RGT    |    RET    |      |
+// |      |           |    BT_0   |   BT_01   |   BT_02   |    BT_C   |    HOME   |    PDN    |    PUP    |    END    |           |      |
+// ╰──────────────────────────────╮    TAB    |    DEL    |    SPC    |           |           |           ╭──────────────────────────────╯
+//                                ╰───────────────────────────────────┴───────────────────────────────────╯
+                        bindings = <
+   &none &kp C_PREV     &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none      &none        &none       &none         &none    &none 
+   &none &kp LGUI       &kp LCTL     &kp LALT     &kp LSHIFT   &kp BSPC       &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT     &kp RET  &none 
+   &none &none          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR     &kp HOME   &kp PG_DN    &kp PG_UP   &kp END       &none    &none 
+                          	         &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
                         >;
                 };
         };
