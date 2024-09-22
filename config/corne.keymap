@@ -25,7 +25,7 @@
         };
         combo_pscrn {
             timeout-ms = <50>;
-            key-positions = <6 10>;
+            key-positions = <1 2>;
             bindings = <&kp PSCRN>;
             layers = <4>;
         };
@@ -37,13 +37,13 @@
         };
         combo_alt_f4 {
             timeout-ms = <50>;
-            key-positions = <38 8>;
+            key-positions = <38 3>;
             bindings = <&alt_f4>;
             layers = <4>;
         };
         combo_BT_CLR_ALL {
             timeout-ms = <50>;
-            key-positions = <25 9>;
+            key-positions = <25 5>;
             bindings = <&bt BT_CLR_ALL>;
             layers = <4>;
         };
@@ -192,15 +192,15 @@
                 // 4
                 movement_layer {
 // ╭──────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────╮
-// |      |    PREV   |    NEXT   |    VOL-   |    VOL+   |    PP     |    PSCRN  |           |    AF4    |           |   PSCRN   |      |
+// |      |    PSCRN  |    PSCRN  |    AF4    |           |    BT_CA  |    PP     |    VOL+   |    VOL-   |    PREV   |    NEXT   |      |
 // |      |    GUI    |    CTRL   |    ALT    |   SHIFT   |    BSPC   |    LFT    |    DWN    |    UP     |    RGT    |    RET    |      |
 // |      |           |    BT_0   |   BT_01   |   BT_02   |    BT_C   |    HOME   |    PDN    |    PUP    |    END    |           |      |
 // ╰──────────────────────────────╮    TAB    |    DEL    |    SPC    |           |           |           ╭──────────────────────────────╯
 //                                ╰───────────────────────────────────┴───────────────────────────────────╯
                         bindings = <
-   &none &kp C_PREV     &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP       &none      &none        &none       &none         &none    &none 
-   &none &kp LGUI       &kp LCTL     &kp LALT     &kp LSHIFT   &kp BSPC       &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT     &kp RET  &none 
-   &none &none          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR     &kp HOME   &kp PG_DN    &kp PG_UP   &kp END       &none    &none 
+   &none &none          &none        &none        &none        &none          &kp C_PP   &kp C_VOL_UP &kp C_VOL_DOWN &kp C_PREV    &kp C_NEXT &none 
+   &none &kp LGUI       &kp LCTL     &kp LALT     &kp LSHIFT   &kp BSPC       &kp LEFT   &kp DOWN     &kp UP         &kp RIGHT     &kp RET    &none 
+   &none &none          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR     &kp HOME   &kp PG_DN    &kp PG_UP      &kp END       &none      &none 
                           	         &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
                         >;
                 };
