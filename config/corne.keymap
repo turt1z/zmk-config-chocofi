@@ -47,6 +47,24 @@
             bindings = <&bt BT_CLR_ALL>;
             layers = <4>;
         };
+        combo_plus {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&kp KP_PLUS>;
+            layers = <0>;
+        };
+        combo_underscore {
+            timeout-ms = <50>;
+            key-positions = <19 20>;
+            bindings = <&kp UNDER>;
+            layers = <0>;
+        };
+        combo_minus {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&kp KP_MINUS>;
+            layers = <0>;
+        };
     };
 };
 
@@ -156,13 +174,13 @@
                 bracket_layer {
 // ╭──────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────╮
 // |      |    ESC    |     @     |     #     |     $     |     %     |     ^     |     &     |     *     |     ;     |    BKSP   |      |
-// |      |    TAB    |     =     |     !     |     "     |           |     \     |     (     |     )     |     |     |    RET    |      |
+// |      |    TAB    |     =     |     !     |     "     |     ~     |     \     |     (     |     )     |     |     |    RET    |      |
 // |      |     ~     |     €     |     ?     |     '     |           |     [     |     {     |     }     |     ]     |    L2     |      |
-// ╰──────────────────────────────╮    ALT    |    CTRL   |    L0     |     L4    |    CTRL   |           ╭──────────────────────────────╯
+// ╰──────────────────────────────╮    ALT    |    CTRL   |     L0    |     L4    |    CTRL   |           ╭──────────────────────────────╯
 //                                ╰───────────────────────────────────┴───────────────────────────────────╯
                         bindings = <
    &none   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT      &kp CARET     &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC    &none 
-   &none   &kp TAB   &kp KP_EQUAL   &kp EXCL     &kp DQT    &none          &kp BSLH      &kp LPAR   &kp RPAR        &kp PIPE  &kp RET     &none 
+   &none   &kp TAB   &kp EQUAL      &kp EXCL     &kp DQT    &kp TILDE      &kp BSLH      &kp LPAR   &kp RPAR        &kp PIPE  &kp RET     &none 
    &none   &kp TILDE &euro          &kp QMARK    &kp SQT    &none          &kp LBKT      &kp LBRC   &kp RBRC        &kp RBKT  &to NUMBERS &none 
                     	            &kp LALT     &kp LCTL   &to DEFAULT    &lt 4 SPACE   &kp RCTL   &none  
                         >;
@@ -213,6 +231,21 @@
    &none &kp LGUI       &kp LCTL     &kp LALT     &kp LSHIFT   &kp BSPC       &kp LEFT   &kp DOWN     &kp UP         &kp RIGHT     &kp RET    &none 
    &none &none          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR     &kp HOME   &kp PG_DN    &kp PG_UP      &kp END       &none      &none 
                           	         &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
+                        >;
+                };
+
+                gaming_layer {
+// ╭──────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────╮
+// |      |     Q     |     W     |     F     |     P     |     B     |           |           |           |           |           |      |
+// |      |     A     |     R     |     S     |     T     |     G     |           |           |           |           |           |      |
+// |      |     X     |     C     |     D     |     V     |     Z     |           |           |           |           |           |      |
+// ╰──────────────────────────────╮    TAB    |    DEL    |    SPC    |           |           |           ╭──────────────────────────────╯
+//                                ╰───────────────────────────────────┴───────────────────────────────────╯
+                        bindings = <
+   &none   &kp TAB     &kp Q         &kp W        &kp E        &kp R          &none    &none    &none       &none      &none       &none 
+   &none   &kp LSHIFT  &kp kp A      &kp S        &kp D        &kp F          &none    &none    &none       &none      &none       &none 
+   &none   &kp LCTRL   &none         &kp Z        &kp X        &kp C          &none    &none    &none       &none      &none       &none 
+                          	         &kp TAB      &kp DEL      &kp SPACE      &none    &none    &none
                         >;
                 };
         };
