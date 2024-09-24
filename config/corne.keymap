@@ -61,7 +61,7 @@
         };
         combo_minus {
             timeout-ms = <50>;
-            key-positions = <32 33>;
+            key-positions = <31 32>;
             bindings = <&kp KP_MINUS>;
             layers = <0>;
         };
