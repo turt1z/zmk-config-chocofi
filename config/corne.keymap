@@ -165,7 +165,7 @@
                         bindings = <
    &none   &kp Q       &kp W        &kp F       &kp P         &kp B        &kp J     &kp L         &kp U              &kp Y           &kp SEMI       &none 
    &none   &kp A       &bhm LCTRL R &bhm LALT S &bhm LSHIFT T &kp G        &kp M     &bhm RSHIFT N &bhm LALT E        &bhm RCTRL I    &kp O          &none 
-   &none   &kp X       &kp C        &kp D       &kp V         &kp Z        &kp K     &kp H         &mt KP_MINUS COMMA &mt KP_PLUS DOT &mt UNDER FSLH &none 
+   &none   &kp X       &kp C        &kp D       &kp V         &kp Z        &kp K     &kp H         &kp COMMA          &kp DOT         &kp FSLH       &none 
                                     &lt 2 TAB   &kp BSPC      &lt 1 SPACE  &lt 4 RET &to BRACKETS  &kp ESC
                         >;
                 };
