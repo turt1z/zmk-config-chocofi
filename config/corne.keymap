@@ -140,6 +140,11 @@
 };
 
 / {
+
+    chosen {
+        zmk,matrix_transform = &five_column_transform;
+    };
+
     behaviors {
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -163,9 +168,9 @@
 // ╰──────────────────────────────╮    TAB    |    BSPC   |    SPC    |    RET    |  BRACKETS |    ESC    ╭──────────────────────────────╯
 //                                ╰───────────────────────────────────┴───────────────────────────────────╯
                         bindings = <
-   &none   &kp Q       &kp W        &kp F       &kp P         &kp B        &kp J     &kp L         &kp U              &kp Y           &kp SEMI       &none 
-   &none   &kp A       &bhm LCTRL R &bhm LALT S &bhm LSHIFT T &kp G        &kp M     &bhm RSHIFT N &bhm LALT E        &bhm RCTRL I    &kp O          &none 
-   &none   &kp X       &kp C        &kp D       &kp V         &kp Z        &kp K     &kp H         &kp COMMA          &kp DOT         &kp FSLH       &none 
+   &kp Q       &kp W        &kp F       &kp P         &kp B        &kp J     &kp L         &kp U              &kp Y           &kp SEMI
+   &kp A       &bhm LCTRL R &bhm LALT S &bhm LSHIFT T &kp G        &kp M     &bhm RSHIFT N &bhm LALT E        &bhm RCTRL I    &kp O   
+   &kp X       &kp C        &kp D       &kp V         &kp Z        &kp K     &kp H         &kp COMMA          &kp DOT         &kp FSLH
                                     &lt 2 TAB   &kp BSPC      &lt 1 SPACE  &lt 4 RET &to BRACKETS  &kp ESC
                         >;
                 };
@@ -179,9 +184,9 @@
 // ╰──────────────────────────────╮    ALT    |    CTRL   |     L0    |     L4    |    CTRL   |           ╭──────────────────────────────╯
 //                                ╰───────────────────────────────────┴───────────────────────────────────╯
                         bindings = <
-   &none   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT       &kp CARET     &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC    &none 
-   &none   &kp TAB   &kp EQUAL      &kp EXCL     &kp DQT    &kp KP_MULTIPLY &kp BSLH      &kp LPAR   &kp RPAR        &kp PIPE  &kp RET     &none 
-   &none   &kp TILDE &euro          &kp QMARK    &kp SQT    &kp TILDE       &kp LBKT      &kp LBRC   &kp RBRC        &kp RBKT  &to NUMBERS &none 
+   &kp ESC   &kp AT         &kp HASH     &kp DLLR   &kp PRCNT       &kp CARET     &kp AMPS   &kp KP_MULTIPLY &kp SEMI  &kp BSPC   
+   &kp TAB   &kp EQUAL      &kp EXCL     &kp DQT    &kp KP_MULTIPLY &kp BSLH      &kp LPAR   &kp RPAR        &kp PIPE  &kp RET    
+   &kp TILDE &euro          &kp QMARK    &kp SQT    &kp TILDE       &kp LBKT      &kp LBRC   &kp RBRC        &kp RBKT  &to NUMBERS
                     	            &kp LALT     &kp LCTL   &to DEFAULT     &lt 4 SPACE   &kp RCTL   &none  
                         >;
                 };
@@ -195,9 +200,9 @@
 // ╰──────────────────────────────╮    ALT    |    CTRL   |     L0    |     L4    |     L1    |   SHIFT   ╭──────────────────────────────╯
 //                                ╰───────────────────────────────────┴───────────────────────────────────╯
                         bindings = <
-   &none   &kp ESC     &ae       &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN       &kp COMMA    &kp N7       &kp N8     &kp N9      &kp BSPC    &none 
-   &none   &kp TAB     &oe       &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL       &kp DOT      &kp N4       &kp N5     &kp N6      &kp RET     &none 
-   &none   &kp TILDE   &ue       &ss           &none        &none           &kp N0       &kp N1       &kp N2     &kp N3      &kp LGUI    &none 
+   &kp ESC     &ae       &kp KP_DIVIDE &kp KP_MULTIPLY &mo FN       &kp COMMA    &kp N7       &kp N8     &kp N9      &kp BSPC
+   &kp TAB     &oe       &kp KP_MINUS  &kp KP_PLUS  &kp EQUAL       &kp DOT      &kp N4       &kp N5     &kp N6      &kp RET 
+   &kp TILDE   &ue       &ss           &none        &none           &kp N0       &kp N1       &kp N2     &kp N3      &kp LGUI
                     	         &kp LALT      &kp LCTL     &to DEFAULT     &lt 4 SPACE  &to BRACKETS &kp LSHIFT 
                         >;
                 };
@@ -211,9 +216,9 @@
 // ╰──────────────────────────────╮           |           |     L0      |             |           |           ╭──────────────────────────────╯
 //                                ╰─────────────────────────────────────┴─────────────────────────────────────╯
                         bindings = <
-   &none   &none        &none      &none       &none       &none            &none      &kp F7       &kp F8     &kp F9      &kp F12      &none 
-   &none   &kp LGUI     &kp LCTL   &kp LALT    &kp LSHIFT  &none            &none      &kp F4       &kp F5     &kp F6      &kp F11      &none 
-   &none   &none        &none      &none       &none       &none            &none      &kp F1       &kp F2     &kp F3      &kp F10      &none 
+   &none        &none      &none       &none       &none            &none      &kp F7       &kp F8     &kp F9      &kp F12
+   &kp LGUI     &kp LCTL   &kp LALT    &kp LSHIFT  &none            &none      &kp F4       &kp F5     &kp F6      &kp F11
+   &none        &none      &none       &none       &none            &none      &kp F1       &kp F2     &kp F3      &kp F10
                     	           &none       &none       &to 0            &none      &none        &none 
                         >;
                 };
@@ -227,9 +232,9 @@
 // ╰──────────────────────────────╮    TAB    |    DEL    |    SPC    |           |           |           ╭──────────────────────────────╯
 //                                ╰───────────────────────────────────┴───────────────────────────────────╯
                         bindings = <
-   &none &none          &none        &none        &none        &none          &kp C_PP   &kp C_VOL_DN &kp C_VOL_UP   &kp C_PREV    &kp C_NEXT &none 
-   &none &kp LGUI       &kp LCTL     &kp LALT     &kp LSHIFT   &kp BSPC       &kp LEFT   &kp DOWN     &kp UP         &kp RIGHT     &kp RET    &none 
-   &none &none          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR     &kp HOME   &kp PG_DN    &kp PG_UP      &kp END       &none      &none 
+   &none          &none        &none        &none        &none          &kp C_PP   &kp C_VOL_DN &kp C_VOL_UP   &kp C_PREV    &kp C_NEXT
+   &kp LGUI       &kp LCTL     &kp LALT     &kp LSHIFT   &kp BSPC       &kp LEFT   &kp DOWN     &kp UP         &kp RIGHT     &kp RET   
+   &none          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR     &kp HOME   &kp PG_DN    &kp PG_UP      &kp END       &none     
                           	         &kp TAB      &kp DEL      &kp SPACE      &none      &none        &none
                         >;
                 };
@@ -242,9 +247,9 @@
 // ╰──────────────────────────────╮    TAB    |    DEL    |    SPC    |           |           |           ╭──────────────────────────────╯
 //                                ╰───────────────────────────────────┴───────────────────────────────────╯
                         bindings = <
-   &none   &kp TAB     &kp Q         &kp W        &kp E        &kp R          &none    &none    &none       &none      &none       &none 
-   &none   &kp LSHIFT  &kp A         &kp S        &kp D        &kp F          &none    &none    &none       &none      &none       &none 
-   &none   &kp LCTRL   &none         &kp Z        &kp X        &kp C          &none    &none    &none       &none      &none       &none 
+   &kp TAB     &kp Q         &kp W        &kp E        &kp R          &none    &none    &none       &none      &none
+   &kp LSHIFT  &kp A         &kp S        &kp D        &kp F          &none    &none    &none       &none      &none
+   &kp LCTRL   &none         &kp Z        &kp X        &kp C          &none    &none    &none       &none      &none
                           	         &kp TAB      &kp DEL      &kp SPACE      &none    &none    &none
                         >;
                 };
