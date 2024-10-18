@@ -25,7 +25,7 @@
         };
         combo_pscrn {
             timeout-ms = <50>;
-            key-positions = <0 2>;
+            key-positions = <0 1>;
             bindings = <&kp PSCRN>;
             layers = <4>;
         };
