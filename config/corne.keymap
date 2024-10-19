@@ -143,6 +143,10 @@
     };
 };
 
+#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM_FAST 200
+#define HM_PRIOR_IDLE 150
+
 / {
     behaviors {
         hm_l: homerow_mods_left {
