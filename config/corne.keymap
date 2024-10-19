@@ -14,25 +14,6 @@
 #define FN 3
 #define MOVEMENT 4
 
-/* Homerow mods */
-
-#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left hand
-#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right hand
-#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumbs on 36+ keys
-
-#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
-    ZMK_HOLD_TAP(NAME, \
-        flavor = "balanced"; \
-        tapping-term-ms = <280>; \
-        quick-tap-ms = <QUICK_TAP_MS>; \
-        require-prior-idle-ms = <150>; \
-        bindings = <HOLD>, <TAP>; \
-        hold-trigger-key-positions = <TRIGGER_POS>; \
-        hold-trigger-on-release; \
-    )
-MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
-MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -159,6 +140,38 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 };
 
 / {
+    behaviors {
+        hm_l: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>,  <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-on-release;
+        };
+    }
+}
+
+/ {
 
     chosen {
         zmk,matrix_transform = &five_column_transform;
@@ -177,7 +190,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 //                         ╰───────────────────────────────────┴───────────────────────────────────╯
                         bindings = <
    &kp Q       &kp W        &kp F       &kp P         &kp B        &kp J     &kp L         &kp U              &kp Y           &kp SEMI
-   &kp A       &hml LCTRL R &hml LALT S &hml LSHIFT T &kp G        &kp M     &hml RSHIFT N &hml LALT E        &hml RCTRL I    &kp O   
+   &kp A       &hm_l LCTRL R &hm_l LALT S &hm_l LSHIFT T &kp G        &kp M     &hm_r RSHIFT N &hm_r LALT E        &hm_r RCTRL I    &kp O   
    &kp X       &kp C        &kp D       &kp V         &kp Z        &kp K     &kp H         &kp COMMA          &kp DOT         &kp FSLH
                             &lt 2 TAB   &kp BSPC      &lt 1 SPACE  &lt 4 RET &to BRACKETS  &kp ESC
                         >;
