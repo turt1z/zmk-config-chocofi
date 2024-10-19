@@ -179,7 +179,7 @@
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
         };
-    }
+    };
 };
 
 / {
